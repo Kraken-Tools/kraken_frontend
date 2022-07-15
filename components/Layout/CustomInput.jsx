@@ -12,7 +12,7 @@ export default function CustomInput({label, placeholder, name, type}) {
             type={type}
             name={name}
             placeholder={placeholder}
-            className="w-full border-2 border-green-400 outline-none rounded-md h-10"/>
+            className="w-full border-2 placeholder-slate-600 text-black border-main-highlight-color outline-none rounded-md px-3 h-10"/>
         </div>
     </div>
   );
