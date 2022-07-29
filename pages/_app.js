@@ -3,7 +3,7 @@ import "../styles/globals.css"
 
 function MyApp({ Component, pageProps }) {
   return(
-    <GoogleOAuthProvider clientId="204455769773-8qvdfjklpitjbrg1ni3qgr9o3lrism0k.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
       <Component {...pageProps} />
     </GoogleOAuthProvider> 
   );
