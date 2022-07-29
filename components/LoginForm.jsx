@@ -1,13 +1,12 @@
+import { useGoogleLogin } from "@react-oauth/google";
 import CustomInput from "../components/Layout/CustomInput";
 
 export default function LoginForm() {
   
-  async function oauthLogin() {
-    const response = await fetch("http://localhost:8000/login/google");
-    const redirectUrl = await response.json();
-    window.location.assign(redirectUrl.target_url);
-  }
-  
+  const googleLogin = useGoogleLogin({
+    flow: "implicit",
+    onSuccess: response => console.log(response)
+  });  
 
   return (
     <form className="bg-secondary-background text-white py-10 px-10">
@@ -24,7 +23,7 @@ export default function LoginForm() {
         <h3>Ou entre com o </h3>
         <button 
           type="button"
-          onClick={oauthLogin} 
+          onClick={googleLogin} 
           className="bg-blue-500 p-2 mx-5">
             Google
           </button>
